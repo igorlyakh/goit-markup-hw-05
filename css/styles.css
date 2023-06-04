@@ -13,7 +13,8 @@
 	--light-slate: #8e8f99;
 	--green-hover: #31d0aa;
 	--animation-func: cubic-bezier(0.4, 0, 0.2, 1);
-	--modal-bg: rgba(46, 47, 66, 0.4);
+	--backdrop-bg: rgba(46, 47, 66, 0.4);
+	--modal-bg: #fcfcfc;
 }
 
 /** --------- Default styles -------- */
@@ -519,7 +520,7 @@ img {
 .modal {
 	width: 408px;
 	height: 584px;
-	background-color: var(--default-white);
+	background-color: var(--modal-bg);
 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
 		0px 2px 1px rgba(0, 0, 0, 0.2);
 	border-radius: 4px;
@@ -527,6 +528,7 @@ img {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	transition: transform 250ms var(--animation-func);
 }
 
 .backdrop {
@@ -534,7 +536,7 @@ img {
 	height: 100%;
 	top: 0;
 	position: fixed;
-	background: var(--modal-bg);
+	background: var(--backdrop-bg);
 }
 
 .modal-btn {
@@ -565,4 +567,8 @@ img {
 	opacity: 0;
 	visibility: hidden;
 	pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+	transform: translate(-50%, -50%) scaleY(3);
 }
