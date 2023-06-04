@@ -125,6 +125,7 @@ img {
 
 .active__link {
 	color: var(--color-hover);
+	margin-bottom: -1px;
 }
 
 .active__link::after {
@@ -136,7 +137,6 @@ img {
 	border-radius: 2px;
 	position: absolute;
 	bottom: 0;
-	margin-bottom: -1px;
 }
 
 /** --------- Icons ----------  */
@@ -480,7 +480,8 @@ img {
 	padding: 12px 24px;
 	transition: color 250ms var(--animation-func),
 		border-color 250ms var(--animation-func),
-		box-shadow 250ms var(--animation-func);
+		box-shadow 250ms var(--animation-func),
+		background-color 250ms var(--animation-func);
 }
 
 .portfolio__btn:hover,
