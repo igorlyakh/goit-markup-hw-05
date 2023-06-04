@@ -13,6 +13,7 @@
 	--light-slate: #8e8f99;
 	--green-hover: #31d0aa;
 	--animation-func: cubic-bezier(0.4, 0, 0.2, 1);
+	--modal-bg: rgba(46, 47, 66, 0.4);
 }
 
 /** --------- Default styles -------- */
@@ -511,4 +512,57 @@ img {
 	padding: 32px 16px;
 	border: 1px solid var(--light-accent);
 	border-top: none;
+}
+
+/** -------------- Modal ------------ */
+
+.modal {
+	width: 408px;
+	height: 584px;
+	background-color: var(--default-white);
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+		0px 2px 1px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.backdrop {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	position: fixed;
+	background: var(--modal-bg);
+}
+
+.modal-btn {
+	width: 24px;
+	height: 24px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	background-color: var(--light-accent);
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 24px;
+	right: 24px;
+	color: var(--accent-dark);
+	fill: currentColor;
+	transition: color 250ms var(--animation-func),
+		border 250ms var(--animation-func);
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+	color: var(--default-white);
+	border: none;
+}
+
+.is-hidden {
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
 }
