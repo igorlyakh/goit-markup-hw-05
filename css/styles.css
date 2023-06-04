@@ -12,6 +12,7 @@
 	--default-white: #ffffff;
 	--light-slate: #8e8f99;
 	--green-hover: #31d0aa;
+	--animation-func: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /** --------- Default styles -------- */
@@ -75,16 +76,19 @@ img {
 	cursor: pointer;
 	font-family: inherit;
 	font-weight: 500;
+	transition: background-color 250ms var(--animation-func);
 }
 
 .btn:hover,
 .btn:focus {
-	background: var(--color-hover);
+	background-color: var(--color-hover);
 }
 
 .link {
 	color: var(--accent-dark);
 	text-decoration: none;
+	transition: color 250ms var(--animation-func);
+	position: relative;
 }
 .link:hover,
 .link:focus {
@@ -117,6 +121,17 @@ img {
 	color: var(--color-text);
 }
 
+.active__link::after {
+	content: "";
+	display: block;
+	height: 4px;
+	width: 100%;
+	background-color: var(--color-hover);
+	border-radius: 2px;
+	position: absolute;
+	bottom: 0;
+}
+
 /** --------- Icons ----------  */
 .icons__list {
 	display: flex;
@@ -138,6 +153,7 @@ img {
 	align-items: center;
 	border-radius: 50%;
 	background-color: var(--color-accent);
+	transition: background-color 250ms var(--animation-func);
 }
 
 .icons__link:hover,
@@ -352,6 +368,8 @@ img {
 	border: 1px solid var(--light-slate);
 	border-radius: 4px;
 	color: var(--light-slate);
+	transition: color 250ms var(--animation-func),
+		border-color 250ms var(--animation-func);
 }
 
 .costumers__icon {
@@ -424,6 +442,7 @@ img {
 	align-items: center;
 	border-radius: 50%;
 	background-color: var(--color-accent);
+	transition: background-color 250ms var(--animation-func);
 }
 
 .footer__link:hover,
@@ -452,6 +471,9 @@ img {
 	letter-spacing: 0.04em;
 	color: var(--color-accent);
 	padding: 12px 24px;
+	transition: color 250ms var(--animation-func),
+		border-color 250ms var(--animation-func),
+		box-shadow 250ms var(--animation-func);
 }
 
 .portfolio__btn:hover,
@@ -476,6 +498,7 @@ img {
 
 .portfolio__link {
 	display: block;
+	transition: box-shadow 250ms var(--animation-func);
 }
 
 .portfolio__link:hover,
