@@ -125,7 +125,7 @@ img {
 
 .active__link {
 	color: var(--color-hover);
-	margin-bottom: -1px;
+	bottom: -1px;
 }
 
 .active__link::after {
