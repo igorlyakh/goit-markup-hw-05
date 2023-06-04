@@ -125,7 +125,6 @@ img {
 
 .active__link {
 	color: var(--color-hover);
-	bottom: -1px;
 }
 
 .active__link::after {
@@ -136,7 +135,7 @@ img {
 	background-color: var(--color-hover);
 	border-radius: 2px;
 	position: absolute;
-	bottom: 0;
+	bottom: -1px;
 }
 
 /** --------- Icons ----------  */
